@@ -43,6 +43,6 @@
 </body>
 </html>
 
+![sticker](https://github.com/user-attachments/assets/6ed05f79-2d36-4633-bf5e-d9f4506f94ca)
 
-<img width="477" height="305" alt="image" src="https://github.com/user-attachments/assets/5fb3c497-3c27-4f14-87c3-bfba62238765" />
 
