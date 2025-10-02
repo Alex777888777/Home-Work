@@ -2,44 +2,72 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Тестовая страница</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница с фоткой</title>
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f8ff;
             text-align: center;
-            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         img {
-            width: 200px;
-            height: 200px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .comments {
+            text-align: left;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            border-left: 4px solid #4CAF50;
         }
         .comment {
-            background: #e3f2fd;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 10px;
+            margin: 15px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>🎯 Тестовая страница</h1>
-    
-    <!-- Смайлик как картинка -->
-    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIiBmaWxsPSIjZmZkNzNlIi8+PGNpcmNsZSBjeD0iOC41IiBjeT0iMTAiIHI9IjEuNSIgZmlsbD0iIzMzMzMzMyIvPjxjaXJjbGUgY3g9IjE1LjUiIGN5PSIxMCIgcj0iMS41IiBmaWxsPSIjMzMzMzMzIi8+PHBhdGggZD0iTTEwIDE2QzEwIDE2IDEyIDE0IDE0IDE2IiBzdHJva2U9IiMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+" alt="Смайлик">
-    
-    <div class="comment">
-        <strong>Комментарий 1:</strong> Эта страница загружается с порта 5060
+    <div class="container">
+        <h1>Моя страница</h1>
+        
+        <!-- Замените "myphoto.jpg" на имя вашего файла -->
+        <img src="myphoto.jpg" alt="Мое фото">
+        
+        <div class="comments">
+            <h2>💬 Комментарии:</h2>
+            
+            <div class="comment">
+                <strong>✅ Успех!</strong> - Nginx корректно обслуживает эту страницу
+            </div>
+            
+            <div class="comment">
+                <strong>🎉 Поздравляю!</strong> - Вы настроили веб-сервер правильно
+            </div>
+            
+            <div class="comment">
+                <strong>🖼️ Фото!</strong> - Это моя фотография
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px; color: #666;">
+            <p>Порт: 80 | Сервер: Nginx | Статус: ✅ Работает</p>
+        </div>
     </div>
-    
-    <div class="comment">
-        <strong>Комментарий 2:</strong> Nginx успешно обслуживает HTML контент
-    </div>
-    
-    <div class="comment">
-        <strong>Комментарий 3:</strong> Конфигурация работает корректно!
-    </div>
-    
-    <p>🚀 Все системы работают нормально!</p>
 </body>
 </html>
 
