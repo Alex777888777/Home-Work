@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя страница с фоткой</title>
+    <title>Здрасте</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -71,6 +71,7 @@
 </body>
 </html>
 
-![sticker](https://github.com/user-attachments/assets/6ed05f79-2d36-4633-bf5e-d9f4506f94ca)
+<img width="517" height="391" alt="image" src="https://github.com/user-attachments/assets/06839e19-bc60-4ed4-a9c9-fff24242dd2a" />
+
 
 
