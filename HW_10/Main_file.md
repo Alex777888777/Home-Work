@@ -42,3 +42,7 @@
     <p>🚀 Все системы работают нормально!</p>
 </body>
 </html>
+
+
+<img width="477" height="305" alt="image" src="https://github.com/user-attachments/assets/5fb3c497-3c27-4f14-87c3-bfba62238765" />
+
