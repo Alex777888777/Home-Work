@@ -73,7 +73,9 @@ http {
 #    }
 
 }
-
+sudo setsebool -P httpd_can_network_connect on
+sudo setsebool -P httpd_can_network_relay on
+sudo setsebool -P httpd_graceful_shutdown on
 
 
 
