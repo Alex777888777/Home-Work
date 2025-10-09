@@ -1,14 +1,10 @@
-#!/bin/bash
+from flask import Flask
 
-set -e
-read -r number
+app = Flask(__name__)
 
-case $number in
-'' | *[!0-9]*)
-	echo not Num
-	;;
-*)
-	[[ $((number % 2)) -eq 0 ]] && echo even || echo odd
-	;;
+@app.route('/')
+def hello():
+    return 'Hello, World! Works without DB!'
 
-esac
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
