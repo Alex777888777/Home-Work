@@ -6,3 +6,4 @@ sudo -u jenkins pip install flask flask_sqlalchemy flask-wtf flask-login flask-m
         sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
 https://github.com/thstarshine/simple-crm
 export NODE_OPTIONS="--openssl-legacy-provider"
+https://github.com/zernst3/my-simple-crm.git
