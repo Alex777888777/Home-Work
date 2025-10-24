@@ -4,3 +4,11 @@ sudo -u jenkins pip install flask flask_sqlalchemy flask-wtf flask-login flask-m
 
 curl "https://install.meteor.com/?release=1.3-beta.12" | sh
 docker run -it -p 3000:3000 -v $(pwd):/app jacksonpradolima/meteor:1.3
+# Скачайте старый установочный скрипт
+wget https://raw.githubusercontent.com/meteor/meteor/release-1.3/scripts/admin/launch-meteor
+
+# Или попробуйте через git
+git clone https://github.com/meteor/meteor.git
+cd meteor
+git checkout release-1.3
+./install.sh
