@@ -4,3 +4,4 @@ sudo -u jenkins pip install flask flask_sqlalchemy flask-wtf flask-login flask-m
 
     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
         sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
+https://github.com/thstarshine/simple-crm
