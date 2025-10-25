@@ -9,25 +9,7 @@ curl https://install.meteor.com/ | sh
     sudo npm install -g meteor --unsafe-perm
     curl -L https://packages.meteor.com/bootstrap-link?release=1.3-beta.12 | sh
 export PATH=$PATH:$(dirname $METEOR_PATH)
-
-
-METEOR_PATH=$(find /usr -name "meteor" -type f 2>/dev/null | head -1)
-echo $METEOR_PATH
+====
+npm uninstall redux-devtools redux-devtools-dock-monitor redux-devtools-log-monitor react-s-alert velocity-react
+rm -rf node_modules
 npm install --legacy-peer-deps
-
-# Попробовать самые старые версии
-npm install react-s-alert@1.0.0 --legacy-peer-deps
-# или
-npm install react-s-alert@0.8.0 --legacy-peer-deps
--------------
-# Добавить SimpleSchema и Collection2
-meteor add aldeed:simple-schema
-meteor add aldeed:collection2
-
-# Если нужна валидация форм
-meteor add aldeed:autoform
----
-# Удалить пакеты для разработки
-npm uninstall redux-devtools
-npm uninstall redux-devtools-dock-monitor  
-npm uninstall redux-devtools-log-monitor
