@@ -19,3 +19,10 @@ npm install --legacy-peer-deps
 npm install react-s-alert@1.0.0 --legacy-peer-deps
 # или
 npm install react-s-alert@0.8.0 --legacy-peer-deps
+-------------
+# Добавить SimpleSchema и Collection2
+meteor add aldeed:simple-schema
+meteor add aldeed:collection2
+
+# Если нужна валидация форм
+meteor add aldeed:autoform
