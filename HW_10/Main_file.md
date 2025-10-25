@@ -13,3 +13,4 @@ export PATH=$PATH:$(dirname $METEOR_PATH)
 
 METEOR_PATH=$(find /usr -name "meteor" -type f 2>/dev/null | head -1)
 echo $METEOR_PATH
+npm install --legacy-peer-deps
