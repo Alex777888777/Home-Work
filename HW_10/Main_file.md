@@ -9,3 +9,7 @@ curl https://install.meteor.com/ | sh
     sudo npm install -g meteor --unsafe-perm
     curl -L https://packages.meteor.com/bootstrap-link?release=1.3-beta.12 | sh
 export PATH=$PATH:$(dirname $METEOR_PATH)
+
+
+METEOR_PATH=$(find /usr -name "meteor" -type f 2>/dev/null | head -1)
+echo $METEOR_PATH
