@@ -16,3 +16,4 @@ git checkout release-1.3
 FROM registry.hub.docker.com/meteor/meteor:1.3-modules-beta.12  # явно Docker Hub
 FROM ghcr.io/meteor/meteor:1.3-modules-beta.12                 # GitHub Container Registry
 FROM myregistry.com/meteor:1.3-modules-beta.12                # частный реестр
+export NODE_TLS_REJECT_UNAUTHORIZED=0
