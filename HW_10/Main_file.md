@@ -5,10 +5,9 @@ sudo -u jenkins pip install flask flask_sqlalchemy flask-wtf flask-login flask-m
 https://github.com/ehtasham89/simple-crm-nodejs-reactjs-mongodb.git
 export NODE_OPTIONS="--openssl-legacy-provider"
 ---
-[mongodb-org-6.0]
-name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/\$releasever/mongodb-org/6.0/x86_64/
+[mongodb-enterprise-8.2]
+name=MongoDB Enterprise Repository
+baseurl=https://repo.mongodb.com/yum/redhat/9/mongodb-enterprise/8.2/$basearch/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
-EOF
+gpgkey=https://pgp.mongodb.com/server-8.0.asc
