@@ -15,6 +15,7 @@ METEOR_PATH=$(find /usr -name "meteor" -type f 2>/dev/null | head -1)
 echo $METEOR_PATH
 npm install --legacy-peer-deps
 
-
-# Установить старую версию react-s-alert, которая поддерживает React 0.14
-npm install react-s-alert@1.3.0 --legacy-peer-deps
+# Попробовать самые старые версии
+npm install react-s-alert@1.0.0 --legacy-peer-deps
+# или
+npm install react-s-alert@0.8.0 --legacy-peer-deps
