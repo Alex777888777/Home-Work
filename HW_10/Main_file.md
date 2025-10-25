@@ -26,3 +26,8 @@ meteor add aldeed:collection2
 
 # Если нужна валидация форм
 meteor add aldeed:autoform
+---
+# Удалить пакеты для разработки
+npm uninstall redux-devtools
+npm uninstall redux-devtools-dock-monitor  
+npm uninstall redux-devtools-log-monitor
