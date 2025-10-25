@@ -5,3 +5,4 @@ sudo -u jenkins pip install flask flask_sqlalchemy flask-wtf flask-login flask-m
 meteor create --release 1.3-beta.12 myapp
 
 export NODE_TLS_REJECT_UNAUTHORIZED=0
+curl https://install.meteor.com/ | sh
