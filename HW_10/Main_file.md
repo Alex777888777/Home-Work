@@ -7,3 +7,5 @@ meteor create --release 1.3-beta.12 myapp
 export NODE_TLS_REJECT_UNAUTHORIZED=0
 curl https://install.meteor.com/ | sh
     sudo npm install -g meteor --unsafe-perm
+    curl -L https://packages.meteor.com/bootstrap-link?release=1.3-beta.12 | sh
+
