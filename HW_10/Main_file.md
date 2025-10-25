@@ -7,3 +7,4 @@ export NODE_OPTIONS="--openssl-legacy-provider"
 ---
 MONGODB_URL=mongodb://localhost:27017/simple_crm
 DB_NAME=simple_crm
+export NODE_OPTIONS="--openssl-legacy-provider"
