@@ -11,3 +11,5 @@ baseurl=https://repo.mongodb.com/yum/redhat/9/mongodb-enterprise/8.2/$basearch/
 gpgcheck=1
 enabled=1
 gpgkey=https://pgp.mongodb.com/server-8.0.asc
+---
+sudo yum install -y mongodb-enterprise-8.2.0 mongodb-enterprise-database-8.2.0 mongodb-enterprise-server-8.2.0 mongodb-mongosh mongodb-enterprise-mongos-8.2.0 mongodb-enterprise-tools-8.2.0
