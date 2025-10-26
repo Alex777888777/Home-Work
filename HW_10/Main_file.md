@@ -17,3 +17,5 @@ db.users.insertOne({
   createdAt: new Date(),
   updatedAt: new Date()
 })
+===
+find Auth -name "*.js" -o -name "*.jsx" | xargs grep -l "register\|createUser"
