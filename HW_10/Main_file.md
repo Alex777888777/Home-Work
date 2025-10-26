@@ -8,3 +8,12 @@ export NODE_OPTIONS="--openssl-legacy-provider"
 MONGODB_URL=mongodb://localhost:27017/simple_crm
 DB_NAME=simple_crm
 export NODE_OPTIONS="--openssl-legacy-provider"
+--
+db.users.insertOne({
+  name: "Super Admin",
+  email: "admin@example.com",
+  password: "$2b$10$hashed_password_here", // Нужно сгенерировать хеш
+  role: "super_admin",
+  createdAt: new Date(),
+  updatedAt: new Date()
+})
