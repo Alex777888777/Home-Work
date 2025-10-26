@@ -1,28 +1,56 @@
 
 c18f1c95c170421fb9f8ae3e37fed95b
 sudo -u jenkins pip install flask flask_sqlalchemy flask-wtf flask-login flask-migrate
----
-https://github.com/ehtasham89/simple-crm-nodejs-reactjs-mongodb.git
-export NODE_OPTIONS="--openssl-legacy-provider"
----
-MONGODB_URL=mongodb://localhost:27017/simple_crm
-DB_NAME=simple_crm
-export NODE_OPTIONS="--openssl-legacy-provider"
---
-db.users.insertOne({
-  name: "Super Admin",
-  email: "admin@example.com",
-  password: "123456G",
-  role: "supper_admin",
-  createdAt: new Date(),
-  updatedAt: new Date()
-})
 ===
-find Auth -name "*.js" -o -name "*.jsx" | xargs grep -l "register\|createUser"
-PORT=5000
-APP_ENV=dev
-MONGODB_URI=mongodb://localhost:27017/simple_crm
-DB_NAME=simple_crm
-ACCESS_TOKEN_SECRET=48f234b26ecdd84220f1a8a85d13496874041d6b1eab09c4506ae152c2bebd0a
-REFRESH_TOKEN_SECRET=fabff2fa3833326be2e4170e1ad3e5c1d4639752197bc5175dfb75c51f737dbb
-$2a$12$VT/ZggOwj5xcl71m09OGCeG3gzi.AgPkcR0GVjXDoG7MrPQboEl9O
+API REQUEST DATA: 
+Object { url: "/auth/login", method: "post", data: '{"email":"kullbro@gmail.com","password":"123456G"}', headers: {…}, baseURL: "http://localhost:5000/api", transformRequest: (1) […], transformResponse: (1) […], timeout: 0, adapter: xhrAdapter(config)
+, xsrfCookieName: "XSRF-TOKEN", … }
+BaseApiClient.js:15:1
+ action USER_LOGOUT @ 15:56:10.174 redux-logger.js:1:1
+ prev state 
+Object { auth: {…}, user: {…}, leads: {…} }
+redux-logger.js:1:1
+ action     
+Object { type: "USER_LOGOUT" }
+redux-logger.js:1:1
+ next state 
+Object { auth: {…}, user: {…}, leads: {…} }
+redux-logger.js:1:1
+ action AUTH_REQUEST_SEND @ 15:56:10.175 redux-logger.js:1:1
+ prev state 
+Object { auth: {…}, user: {…}, leads: {…} }
+redux-logger.js:1:1
+ action     
+Object { type: "AUTH_REQUEST_SEND" }
+redux-logger.js:1:1
+ next state 
+Object { auth: {…}, user: {…}, leads: {…} }
+redux-logger.js:1:1
+API REQUEST DATA: 
+Object { url: "/auth/login", method: "post", data: '{"email":"kullbro@gmail.com","password":"123456G"}', headers: {…}, baseURL: "http://localhost:5000/api", transformRequest: (1) […], transformResponse: (1) […], timeout: 0, adapter: xhrAdapter(config)
+, xsrfCookieName: "XSRF-TOKEN", … }
+BaseApiClient.js:15:1
+ action USER_LOGOUT @ 15:56:10.431 redux-logger.js:1:1
+ prev state 
+Object { auth: {…}, user: {…}, leads: {…} }
+redux-logger.js:1:1
+ action     
+Object { type: "USER_LOGOUT" }
+redux-logger.js:1:1
+ next state 
+Object { auth: {…}, user: {…}, leads: {…} }
+redux-logger.js:1:1
+ action AUTH_REQUEST_SEND @ 15:56:10.433 redux-logger.js:1:1
+ prev state 
+Object { auth: {…}, user: {…}, leads: {…} }
+redux-logger.js:1:1
+ action     
+Object { type: "AUTH_REQUEST_SEND" }
+redux-logger.js:1:1
+ next state 
+Object { auth: {…}, user: {…}, leads: {…} }
+redux-logger.js:1:1
+API REQUEST DATA: 
+Object { url: "/auth/login", method: "post", data: '{"email":"kullbro@gmail.com","password":"123456G"}', headers: {…}, baseURL: "http://localhost:5000/api", transformRequest: (1) […], transformResponse: (1) […], timeout: 0, adapter: xhrAdapter(config)
+, xsrfCookieName: "XSRF-TOKEN", … }
+BaseApiClient.js:15:1
