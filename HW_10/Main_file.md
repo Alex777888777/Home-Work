@@ -13,7 +13,7 @@ db.users.insertOne({
   name: "Super Admin",
   email: "admin@example.com",
   password: "123456G",
-  role: "super_admin",
+  role: "supper_admin",
   createdAt: new Date(),
   updatedAt: new Date()
 })
