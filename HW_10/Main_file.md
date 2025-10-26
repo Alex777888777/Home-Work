@@ -2,35 +2,125 @@
 c18f1c95c170421fb9f8ae3e37fed95b
 sudo -u jenkins pip install flask flask_sqlalchemy flask-wtf flask-login flask-migrate
 ===
-./app/Auth/Auth.Controller.js:const redisClient = require('../helpers/init_redis')
-./app/Auth/Auth.Controller.js:const client = require('../helpers/init_redis')
-./app/helpers/init_redis.js:const redis = require('redis')
-./app/helpers/jwt_helper.js:const client = require('./init_redis')
-./app/index.js://require('./helpers/init_redis')
-./node_modules/redis/lib/commands.js:var commands = require('redis-commands');
-./node_modules/redis/lib/customErrors.js:var RedisError = require('redis-errors').RedisError;
-./node_modules/redis/index.js:var Parser = require('redis-parser');
-./node_modules/redis/index.js:var RedisErrors = require('redis-errors');
-./node_modules/redis/index.js:var commands = require('redis-commands');
-./node_modules/redis/CHANGELOG.md:- This is no BC as there is no changed behavior for the user at all but just a performance improvement. Explicitly requireing the Hiredis parser is still possible.
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const { AbortError, AggregateError, ReplyError } = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis/README.md:const redis = require("redis");
-./node_modules/redis-commands/tools/build.js:var Redis = require('ioredis')
-./node_modules/redis-commands/README.md:var commands = require('redis-commands');
-./node_modules/redis-errors/README.md:const { ReplyError, InterruptError } = require('redis-errors');
-./node_modules/redis-parser/README.md:const Parser = require('redis-parser');
-./node_modules/redis-parser/README.md:const Parser = require("redis-parser");
-./node_modules/redis-parser/lib/parser.js:const errors = require('redis-errors')
+const createError = require('http-errors')
+//const redisClient = require('../helpers/init_redis')
 
+const User = require('../User/User.model')
+const { authSchema, userSchema } = require('../helpers/validation_schema')
+const {
+  signAccessToken,
+  signRefreshToken,
+  verifyRefreshToken,
+  getPayload
+} = require('../helpers/jwt_helper')
+//const client = require('../helpers/init_redis')
+
+module.exports = {
+  loggedUser: async (req, res, next) => {
+    try {
+      const userId = await getPayload(req, next);
+      const data = await User.findById(userId)
+      if (!data._id)
+        throw createError.NotFound(`User data not found!`)
+
+      res.send({ data })
+    } catch (error) {
+      console.error(error)
+      next(error)
+    }
+  },
+
+  login: async (req, res, next) => {
+    try {
+      console.log('=== LOGIN ATTEMPT ===');
+      console.log('Request body:', req.body);
+      
+      const result = await authSchema.validateAsync(req.body)
+      console.log('✅ Validation passed');
+      
+      const user = await User.findOne({ email: result.email }).select('+password').exec()
+      console.log('🔍 User search result:', user ? `Found user: ${user.email}` : 'User not found');
+      
+      if (!user) throw createError.NotFound('User not registered')
+
+      const isMatch = await user.isValidPassword(result.password)
+      console.log('🔐 Password match:', isMatch);
+      
+      if (!isMatch)
+        throw createError.Unauthorized('email/password not valid')
+
+      const accessToken = await signAccessToken(user.id)
+      const refreshToken = await signRefreshToken(user.id)
+      console.log('✅ Tokens generated successfully');
+
+     // redisClient.SET(`auth_type_${user._id}`, user.role, 'EX', 60 * 60)
+      console.log('✅ Redis updated');
+
+      console.log('🎉 Login successful for user:', user.email);
+      res.send({ accessToken, refreshToken })
+    } catch (error) {
+      console.error('❌ Login error:', error.message);
+
+      if (error.isJoi === true) {
+        console.log('❌ Validation error');
+        return next(createError.BadRequest('Invalid email/Password'))
+      }
+      
+      next(error)
+    }
+  },
+
+  create: async (req, res, next) => {
+    try {
+      const { type, ...rest } = req.body
+
+      const result = await userSchema.validateAsync({...rest, role: type === 'admin' ? "supper_admin":"staff"})
+      const doesExist = await User.findOne({ email: result.email })
+
+      if (doesExist)
+        throw createError.Conflict(`${result.email} is already been registered`)
+
+      const user = new User(result)
+      const savedUser = await user.save()
+
+      res.send({ data:savedUser, message: "User data saved successfully." })
+    } catch (error) {
+      console.error(error);
+      next(error)
+    }
+  },
+
+  refreshToken: async (req, res, next) => {
+    try {
+      const { refreshToken } = req.body
+      if (!refreshToken) throw createError.BadRequest()
+      const userId = await verifyRefreshToken(refreshToken)
+
+      const accessToken = await signAccessToken(userId)
+      const refToken = await signRefreshToken(userId)
+      res.send({ accessToken: accessToken, refreshToken: refToken })
+    } catch (error) {
+      console.error(error);
+      next(error)
+    }
+  },
+
+  logout: async (req, res, next) => {
+    try {
+      const { refreshToken } = req.body
+      if (!refreshToken) throw createError.BadRequest()
+  //    const userId = await verifyRefreshToken(refreshToken)
+    //  client.DEL(userId, (err, val) => {
+      //  if (err) {
+        //  console.log(err.message)
+         // throw createError.InternalServerError()
+      //  }
+      //  console.log(val)
+      //  res.sendStatus(204)
+    //  })
+    } catch (error) {
+      console.error(error);
+      next(error)
+    }
+  },
+}
