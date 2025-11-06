@@ -8,3 +8,4 @@ https://buboed-alden-pockier.ngrok-free.dev
 
 curl -O https://pagekite.net/pk/pagekite.py
 $ python3 pagekite.py 80 yourname.pagekite.me
+alex777.pagekite.me	
