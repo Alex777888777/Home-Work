@@ -6,4 +6,5 @@ https://github.com/idurar/idurar-erp-crm.git
 https://buboed-alden-pockier.ngrok-free.dev
 
 
-https://ready-hats-smell.loca.lt
+curl -O https://pagekite.net/pk/pagekite.py
+$ python3 pagekite.py 80 yourname.pagekite.me
