@@ -16,3 +16,4 @@ tunnels:
   weather_api:
     proto: http
     addr: 9801
+  https://buboed-alden-pockier.ngrok-free.dev
