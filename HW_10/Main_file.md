@@ -10,3 +10,4 @@ try again, and these instructions will be replaced with instructions on how to
 register your key with serveo.
 
 Forwarding HTTP traffic from https://121506997d2668eb2a6aecaec33bda75.serveo.net
+VITE_DEV_REMOTE = 'remote'
