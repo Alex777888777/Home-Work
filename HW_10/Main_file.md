@@ -6,4 +6,4 @@ sudo yum remove pgdg-rechat-repo pgdg-common
 sudo rm -f /etc/yum.repos.d/pgdg-*.repo
 
 
-sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+https://e9a45f392c58c2369725a71bb8802ac8.serveo.net
