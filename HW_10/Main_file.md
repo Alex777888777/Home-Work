@@ -6,4 +6,5 @@ sudo yum remove pgdg-rechat-repo pgdg-common
 sudo rm -f /etc/yum.repos.d/pgdg-*.repo
 
 
-https://e9a45f392c58c2369725a71bb8802ac8.serveo.net
+https://37252420fb3a38bb84f556640fa54881.serveo.net
+
